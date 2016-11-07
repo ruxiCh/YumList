@@ -31,7 +31,7 @@ module.exports = {
             }
         ]
     },
-    entry: ["webpack-dev-server/client?http://localhost:2300", "webpack/hot/only-dev-server","./src/index"],
+    entry: ["webpack-dev-server/client?http://localhost:3200", "webpack/hot/only-dev-server","./src/index"],
     output: {
         path: path.join(__dirname, "dist"),
         filename: "bundle.js",

@@ -63,7 +63,7 @@
 /******/ 	}
 
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "d2a7941f5b1eb9fc6934"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "5a1759f5e73ec9ad7349"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 
@@ -719,7 +719,7 @@
 		}
 	}
 
-	/* WEBPACK VAR INJECTION */}.call(exports, "?http://localhost:2300"))
+	/* WEBPACK VAR INJECTION */}.call(exports, "?http://localhost:3200"))
 
 /***/ },
 /* 2 */
@@ -8439,7 +8439,7 @@
 	                    React.createElement(
 	                        "div",
 	                        null,
-	                        "Heyyyyyy!!!?"
+	                        "Heyyyyyy.."
 	                    ),
 	                    React.createElement("div", { className: "strawberry" })
 	                );

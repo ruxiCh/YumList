@@ -8,7 +8,7 @@ var Hello = React.createClass({
         return (
             <div>
                 <h1>I'm inside the component wooo LALALA!</h1>
-                <div>Heyyyyyy!!!?</div>
+                <div>HeyyyyyyYYYY!!11</div>
                 <div className="strawberry"></div>
             </div>
         )
