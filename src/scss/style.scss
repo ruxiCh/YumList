@@ -1,8 +1,40 @@
-h1 {
-  color: deeppink;
+@import "utils/mixins";
+@import "utils/font_sizes";
+
+$green: #3b9a22;
+$orange: #ff7e00;
+
+body {
+  width: 100%;
+  margin: 0;
 }
-.strawberry {
-  width: 50%;
-  background: url("../img/strawberry.jpg") no-repeat center/100%;
-  padding-top: 40%;
+header {
+  width: 100%;
+  border-bottom: 2px solid $green;
+  padding: 1% 0;
+  .logo, .go_to_button {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .logo {
+    width: 10%;
+    margin: 0 73% 0 2%;
+    background: url("../img/logo_orange.png") no-repeat center/100%;
+    padding-top: 4%;
+  }
+  .go_to_button {
+    width: 10%;
+    border: 1px solid $green;
+    padding: 1%;
+    border-radius: 5px;
+    text-align: center;
+    color: $green;
+    font-family: "Roboto", sans-serif;
+    cursor: pointer;
+    @include font-s26;
+    &:hover {
+      background-color: $green;
+      color: white;
+    }
+  }
 }
