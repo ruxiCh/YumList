@@ -5,7 +5,7 @@ module.exports = {
     resolve: {
       root: path.resolve(__dirname),
       modulesDirectories: ["node_modules", "src"],
-      extensions: ["", ".css", ".js", ".jsx", "sass", ".scss"]
+      extensions: ["", ".css", ".js", ".jsx", ".less"]
     },
     module: {
         loaders: [
@@ -17,8 +17,8 @@ module.exports = {
                 },
                 include: path.join(__dirname, "src")
             }, {
-                test: /\.(scss|sass)$/,
-                loader: "style-loader!css-loader!postcss-loader!sass-loader",
+                test: /\.(less)$/,
+                loader: "style-loader!css-loader!postcss-loader!less-loader",
                 include: path.join(__dirname, "src/scss")
             }, {
                 test: /\.(png|jpg)/,
