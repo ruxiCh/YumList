@@ -1,17 +1,19 @@
-var React = require("react");
-var ReactDOM = require("react-dom");
+import React from 'react'
+import { render } from 'react-dom'
 
-var Search = require("components/Search");
-require("scss/style.scss");
+import Search from './components/Search'
+// import all from './less/style'
+require("./less/style.less")
+
 
 var Main = React.createClass({
     getDefaultProps() {
         return {
-            pages: ["Search", "List"],
+            pages: [Search, "List"],
         }
     },
     getInitialState() {
-        return{
+        return {
             activePage: this.props.pages[0]
         }
     },
@@ -24,4 +26,4 @@ var Main = React.createClass({
     }
 });
 
-ReactDOM.render(<Main />, document.getElementById("mount"));
+render(<Main />, document.getElementById("mount"));

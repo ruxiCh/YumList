@@ -1,9 +1,10 @@
-var React = require("react");
-var ReactDOM = require("react-dom");
+import React from 'react'
+import { render } from 'react-dom'
 
-var GoToButton = require("./GoToButton");
+import GoToButton from "./GoToButton"
 
 var Search = React.createClass({
+        displayName: "Search",
         render() {
             return(
                 <div>

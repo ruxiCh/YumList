@@ -1,4 +1,4 @@
-path = require("path");
+var path = require("path");
 var webpack = require("webpack");
 
 module.exports = {
@@ -10,24 +10,25 @@ module.exports = {
     module: {
         loaders: [
             {
-                test: /\.jsx?$/,
+                test: /\.jsx?/,
+                loader: "react-hot",
+                include: path.join(__dirname, "src")
+            },
+            {
+                test: /\.jsx?/,
                 loader: "babel-loader",
                 query: {
-                    presets: ["es2015", "react"]
+                    presets: ["env", "react"]
                 },
                 include: path.join(__dirname, "src")
             }, {
-                test: /\.(less)$/,
-                loader: "style-loader!css-loader!postcss-loader!less-loader",
-                include: path.join(__dirname, "src/scss")
+                test: /\.less?$/,
+                loader: "style-loader!css-loader!less-loader",
+                include: path.join(__dirname, "src/less")
             }, {
                 test: /\.(png|jpg)/,
                 loader: "url-loader?limit=10000?/!image-webpack-loader",
                 include: path.join(__dirname, "src/img")
-            }, {
-                test: /\.jsx?$/,
-                loader: "react-hot",
-                include: path.join(__dirname, "src")
             }
         ]
     },

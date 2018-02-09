@@ -1,8 +1,8 @@
 @import "utils/mixins";
 @import "utils/font_sizes";
 
-$green: #3b9a22;
-$orange: #ff7e00;
+@green: #3b9a22;
+@orange: #ff7e00;
 
 body {
   width: 100%;
@@ -10,7 +10,7 @@ body {
 }
 header {
   width: 100%;
-  border-bottom: 2px solid $green;
+  border-bottom: 2px solid @green;
   padding: 1% 0;
   .logo, .go_to_button {
     display: inline-block;
@@ -24,16 +24,16 @@ header {
   }
   .go_to_button {
     width: 10%;
-    border: 1px solid $green;
+    border: 1px solid @green;
     padding: 1%;
     border-radius: 5px;
     text-align: center;
-    color: $green;
+    color: @green;
     font-family: "Roboto", sans-serif;
     cursor: pointer;
-    @include font-s26;
+    .font-s26();
     &:hover {
-      background-color: $green;
+      background-color: @green;
       color: white;
     }
   }
