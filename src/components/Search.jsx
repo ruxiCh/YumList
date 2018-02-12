@@ -2,9 +2,9 @@ import React from 'react'
 import { render } from 'react-dom'
 
 import GoToButton from "./GoToButton"
+import ProductList from "./ProductList"
 
 var Search = React.createClass({
-        displayName: "Search",
         render() {
             return(
                 <div>
@@ -12,6 +12,9 @@ var Search = React.createClass({
                         <div className="logo"></div>
                         <GoToButton destination = "List" />
                     </header>
+                    <div className="product_list_container">
+                        <ProductList />
+                    </div>
                 </div>
             )
         }

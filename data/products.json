@@ -1,0 +1,24 @@
+{
+	"products": [
+		{	
+			"id" : 1, 
+			"name": "sweet potatoes"
+		},
+		{
+			"id" : 2, 
+			"name": "rice"
+		},
+		{
+			"id" : 3, 
+			"name": "chocolate"
+		},
+		{
+			"id" : 4, 
+			"name": "black beans"
+		},
+		{
+			"id" : 5, 
+			"name": "strawberries"
+		}
+	]
+}
