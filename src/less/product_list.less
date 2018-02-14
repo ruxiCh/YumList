@@ -1,0 +1,39 @@
+.product_list_container {
+	padding-top: 40px;
+}
+
+.product_list {
+	width: 80%;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.product_list_item {
+	width: 32%;
+	position: relative;
+	img {
+		width: 100%;
+	}
+	.overlay {
+		opacity: 0;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		background-color: fade(@green, 60%);
+		transition: opacity 1s;
+		&:hover {
+			opacity: 1;
+			cursor: pointer;
+		}
+	}
+	.product_name {
+		color: white;
+		text-align: center;
+		.font-s26();
+		text-transform: capitalize;
+	}
+}

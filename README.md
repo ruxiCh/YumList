@@ -1,2 +1,2 @@
 # YumList
-A simple shopping list web app written in React
+A simple shopping list web app meant to help me learn React

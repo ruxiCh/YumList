@@ -1,6 +1,8 @@
 import React from "react"
 import { render } from "react-dom"
 
+import ProductListItem from "./ProductListItem"
+
 var ProductList = React.createClass({
 	getInitialState() {
 		return {
@@ -31,11 +33,17 @@ var ProductList = React.createClass({
 			)
 	},
 	componentWillMount() {
-		this.getProducts(this.state.products)
+		this.setState({productData: this.getProducts(this.state.products)});
 	},
 	render() {
+		// this.getProducts(this.state.products).then((products) => console.log(products))
 		return (
-			<div>Produkten List</div>
+			<div className='product_list'>
+				{this.state.productData.map((product) => {
+					return <ProductListItem id="{product.id}" name="{product.name}" selected="false" />
+				})}			
+			}
+			</div>
 			)
 	}
 })
