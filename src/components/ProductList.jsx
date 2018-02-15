@@ -19,18 +19,7 @@ var ProductList = React.createClass({
 				reject(Error(request.statusText))
 			}
 			request.send()
-		})
-		
-	},
-	getProducts(current_product_names) {
-		this.getAllProducts().then(
-				(all_products) => {
-					return all_products.filter((product) => {
-						return current_product_names.includes(product.name)
-					});
-				},
-				(err) => console.error(new Error("the products cannot be loaded"))
-			)
+		})	
 	},
 	componentWillMount() {
 		if (this.props.type === "search") {
@@ -46,9 +35,8 @@ var ProductList = React.createClass({
 		return (
 			<div className='product_list'>
 				{this.state.products.map((product) => {
-					return <ProductListItem key={product.id} name={product.name} selected="false" />
+					return <ProductListItem key={product.id} name={product.name} selected={false} />
 				})}			
-				
 			</div>
 			)
 	}
