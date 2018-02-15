@@ -6,7 +6,7 @@ import ProductListItem from "./ProductListItem"
 var ProductList = React.createClass({
 	getInitialState() {
 		return {
-			products: ["rice", "strawberries", "black beans"]
+			products: []
 		}
 	},
 	getAllProducts() {
@@ -33,16 +33,22 @@ var ProductList = React.createClass({
 			)
 	},
 	componentWillMount() {
-		this.setState({productData: this.getProducts(this.state.products)});
+		if (this.props.type === "search") {
+			this.getAllProducts().then(
+				(products) => {
+					this.setState({products: products})
+				}, 
+				(err) => console.error(new Error("the products cannot be loaded"))
+			)
+		}
 	},
 	render() {
-		// this.getProducts(this.state.products).then((products) => console.log(products))
 		return (
 			<div className='product_list'>
-				{this.state.productData.map((product) => {
-					return <ProductListItem id="{product.id}" name="{product.name}" selected="false" />
+				{this.state.products.map((product) => {
+					return <ProductListItem key={product.id} name={product.name} selected="false" />
 				})}			
-			}
+				
 			</div>
 			)
 	}

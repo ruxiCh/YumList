@@ -13,7 +13,7 @@ var Search = React.createClass({
                         <GoToButton destination = "List" />
                     </header>
                     <div className="product_list_container">
-                        <ProductList />
+                        <ProductList type="search" />
                     </div>
                 </div>
             )
