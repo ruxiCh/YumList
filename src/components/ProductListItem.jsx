@@ -2,13 +2,6 @@ import React from 'react'
 import { render } from 'react-dom'
 
 const ProductListItem = React.createClass({
-	selectOrDeselect() {
-		if(this.props.selected === true) {
-			console.log("selected!")
-		} else {
-			console.log("not selected!")
-		}	
-	},
 	render() {
 		const imageSrc = `./src/img/${this.props.name.replace(' ', '_')}.jpg`
 		return (
@@ -17,6 +10,7 @@ const ProductListItem = React.createClass({
 				<div className="overlay">
 					<h4 className="product_name">{this.props.name}</h4>
 				</div>
+				<div className="fa fa-check-circle"></div>
 			</div>
 			)
 	}

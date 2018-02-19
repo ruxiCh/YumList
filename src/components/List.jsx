@@ -1,23 +1,23 @@
-import React from 'react'
-import { render } from 'react-dom'
+import React from "react"
+import { render } from "react-dom"
 
 import GoToButton from "./GoToButton"
 import ProductList from "./ProductList"
 
-var Search = React.createClass({
+var List = React.createClass({
         render() {
             return(
                 <div>
                     <header>
                         <div className="logo"></div>
-                        <GoToButton destination = "List" />
+                        <GoToButton destination = "Search" />
                     </header>
                     <div className="product_list_container">
-                        <ProductList type="search" products={this.props.products} selectOrUnselectProduct={this.props.selectOrUnselectProduct} />
+                        <ProductList type="list" />
                     </div>
                 </div>
             )
         }
     });
 
-module.exports = Search;
+module.exports = List;
