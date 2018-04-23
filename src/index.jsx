@@ -24,13 +24,13 @@ var Main = React.createClass({
         return new Promise((resolves, rejects) => {
             const request = new XMLHttpRequest()
             request.open('GET', './data/products.json')
-            request.onload = () => { 
+            request.onload = () => {
                 (request.status === 200) ?
                 resolves(JSON.parse(request.response).products) :
                 reject(Error(request.statusText))
             }
             request.send()
-        })  
+        })
     },
     setProductsSelectedProp(products) {
         return products.map((product) => {
@@ -48,18 +48,21 @@ var Main = React.createClass({
         productFromProducts.selected = selectedValue;
         this.setState({products: products})
     },
+    goToPage(page) {
+        this.setState({activePage: page})
+    },
     componentWillMount() {
         this.getAllProducts().then(
             (productsWithoutSelectedProp) => {
                 var products = this.setProductsSelectedProp(productsWithoutSelectedProp)
                 this.setState({products: products})
-            }, 
+            },
             (error) => { new Error("Could not get products!")})
     },
     render() {
         return (
             <div>
-                <this.state.activePage products={this.state.products} selectOrUnselectProduct={this.selectOrUnselectProduct} />
+                <this.state.activePage products={this.state.products} selectOrUnselectProduct={this.selectOrUnselectProduct} activePage={this.activePage} goToPage={this.goToPage} />
             </div>
         )
     }
