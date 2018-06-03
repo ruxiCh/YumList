@@ -11,13 +11,21 @@ require("./less/style.less")
 var Main = React.createClass({
     getDefaultProps() {
         return {
-            pages: [Search, List],
+            pages: [
+              {
+                name: "Search",
+                component: Search
+              },
+              {
+                name: "List",
+                component: List
+              }]
         }
     },
     getInitialState() {
         return {
             activePage: this.props.pages[0],
-            products: []
+            products: [],
         }
     },
     getAllProducts() {
@@ -44,12 +52,13 @@ var Main = React.createClass({
             selectedValue = false
         }
         let products = this.state.products
-        let productFromProducts = products.filter((item) =>  item.id === product.props.id)[0]
-        productFromProducts.selected = selectedValue;
+        let productFromState = products.filter((item) =>  item.id === product.props.id)[0]
+        productFromState.selected = selectedValue;
         this.setState({products: products})
     },
-    goToPage(page) {
-        this.setState({activePage: page})
+    goToPage(pageName) {
+      let newActivePage = this.props.pages.filter((item) => item.name === pageName)[0]
+        this.setState({activePage: newActivePage})
     },
     componentWillMount() {
         this.getAllProducts().then(
@@ -62,7 +71,7 @@ var Main = React.createClass({
     render() {
         return (
             <div>
-                <this.state.activePage products={this.state.products} selectOrUnselectProduct={this.selectOrUnselectProduct} activePage={this.activePage} goToPage={this.goToPage} />
+                <this.state.activePage.component products={this.state.products} selectOrUnselectProduct={this.selectOrUnselectProduct} goToPage={this.goToPage} />
             </div>
         )
     }
