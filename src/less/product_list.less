@@ -7,15 +7,20 @@
 	margin: 0 auto;
 	display: flex;
 	flex-direction: row;
-	justify-content: space-between;
+	justify-content: left;
 	flex-wrap: wrap;
 }
 
 .product_list_item {
-	width: 19%;
+	width: 14.5vw;
+	height: 14.5vw;
+	margin: 0 1% 1% 0;
 	position: relative;
 	border: 3px solid transparent;
 	position: relative;
+	&:nth-child(5n) {
+		margin-right: 0;
+	}
 	img {
 		width: 100%;
 		position: relative;
