@@ -10,10 +10,10 @@ var Search = React.createClass({
                 <div>
                     <header>
                         <div className="logo"></div>
-                        <GoToButton destination = "List" />
+                        <GoToButton destination="List" goToPage={this.props.goToPage} />
                     </header>
                     <div className="product_list_container">
-                        <ProductList type="search" />
+                        <ProductList type="search" products={this.props.products} selectOrUnselectProduct={this.props.selectOrUnselectProduct} />
                     </div>
                 </div>
             )
