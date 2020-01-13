@@ -3,22 +3,21 @@ var webpack = require("webpack");
 
 module.exports = {
     resolve: {
-      root: path.resolve(__dirname),
-      modulesDirectories: ["node_modules", "src"],
-      extensions: ["", ".css", ".js", ".jsx", ".less"]
+      modules: ["node_modules", path.resolve(__dirname, "src")],
+      extensions: [".css", ".js", ".jsx", ".less"]
     },
     module: {
-        loaders: [
+        rules: [
             {
                 test: /\.jsx?/,
-                loader: "react-hot",
+                loader: "react-hot-loader/webpack",
                 include: path.join(__dirname, "src")
             },
             {
                 test: /\.jsx?/,
                 loader: "babel-loader",
                 query: {
-                    presets: ["env", "react"]
+                    presets: ["@babel/preset-env", "@babel/preset-react"]
                 },
                 include: path.join(__dirname, "src")
             }, {
@@ -40,7 +39,7 @@ module.exports = {
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
-        new webpack.NoErrorsPlugin()
+        new webpack.NoEmitOnErrorsPlugin()
     ]
 
 
