@@ -2,7 +2,6 @@ import React from "react"
 
 import GoToButton from "./GoToButton"
 import ProductList from "./ProductList"
-import Search from "./Search"
 
 class List extends React.Component {
     filterProducts(products) {
@@ -25,4 +24,4 @@ class List extends React.Component {
 }
 
 
-export default List;
+export default List
