@@ -23,22 +23,34 @@ class Main extends React.Component {
             productFromState.selected = selectedValue
             this.setState({products: products})
         }
-        this.getAllProducts = () => {
+        this.getProducts = () => {
             return new Promise((resolves, rejects) => {
                 const request = new XMLHttpRequest()
                 request.open('GET', './data/products.json')
                 request.onload = () => {
                     (request.status === 200) ?
                         resolves(JSON.parse(request.response).products) :
-                        reject(Error(request.statusText))
+                        rejects(Error(request.statusText))
                 }
                 request.send()
             })
         }
-        this.setProductsSelectedProp = (products) => {
+        this.initSelectedProp = (products) => {
             return products.map((product) => {
                 return Object.assign({selected: false}, product)
             })
+        }
+        this.getCategories = () => {
+            return new Promise((resolves, rejects) => {
+                const request = new XMLHttpRequest()
+                request.open('GET', './data/product_categories.json')
+                request.onload = () => {
+                    (request.status === 200) ?
+                        resolves(JSON.parse(request.response).product_categories) :
+                        rejects(Error(request.statusText));
+                };
+                request.send()
+            });
         }
         this.goToPage = (pageName) => {
             let newActivePage = this.props.pages.filter((item) => item.name === pageName)[0]
@@ -47,17 +59,24 @@ class Main extends React.Component {
     }
 
     componentDidMount() {
-        this.getAllProducts().then(
+        this.getProducts().then(
             (productsWithoutSelectedProp) => {
-                var products = this.setProductsSelectedProp(productsWithoutSelectedProp)
+                var products = this.initSelectedProp(productsWithoutSelectedProp)
                 this.setState({products: products})
             },
-            () => { new Error("Could not get products!")})
+            () => { new Error("Could not get products!")}
+        )
+        this.getCategories().then(
+            (categories) => {
+                this.setState({categories: categories})
+            },
+            () => { new Error ("Could not get product categories!")}
+        )
     }
     render() {
         return (
             <div>
-                <this.state.activePage.component products={this.state.products} selectOrUnselectProduct={this.selectOrUnselectProduct} goToPage={this.goToPage} />
+                <this.state.activePage.component products={this.state.products} categories={this.state.categories} selectOrUnselectProduct={this.selectOrUnselectProduct} goToPage={this.goToPage} />
             </div>
         )
     }

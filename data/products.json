@@ -2,23 +2,28 @@
 	"products": [
 		{	
 			"id" : 1, 
-			"name": "sweet potatoes"
+			"name": "sweet potatoes",
+            "category_id": 2
 		},
 		{
 			"id" : 2, 
-			"name": "rice"
+			"name": "rice",
+            "category_id": 4
 		},
 		{
 			"id" : 3, 
-			"name": "chocolate"
+			"name": "chocolate",
+            "category_id": 5
 		},
 		{
 			"id" : 4, 
-			"name": "black beans"
+			"name": "black beans",
+            "category_id": 3
 		},
 		{
 			"id" : 5, 
-			"name": "strawberries"
+			"name": "strawberries",
+            "category_id": 1
 		}
 	]
 }

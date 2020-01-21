@@ -1,0 +1,24 @@
+{
+  "product_categories": [
+    {
+      "id": 1,
+      "name": "fruits"
+    },
+    {
+      "id": 2,
+      "name:": "vegetables"
+    },
+    {
+      "id": 3,
+      "name:": "legumes"
+    },
+    {
+      "id": 4,
+      "name:": "grains"
+    },
+    {
+      "id": 5,
+      "name:": "sweets"
+    }
+  ]
+}
