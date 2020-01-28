@@ -6,19 +6,19 @@
     },
     {
       "id": 2,
-      "name:": "vegetables"
+      "name": "vegetables"
     },
     {
       "id": 3,
-      "name:": "legumes"
+      "name": "legumes"
     },
     {
       "id": 4,
-      "name:": "grains"
+      "name": "grains"
     },
     {
       "id": 5,
-      "name:": "sweets"
+      "name": "sweets"
     }
   ]
 }
