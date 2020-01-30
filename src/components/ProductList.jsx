@@ -7,7 +7,7 @@ class ProductList extends React.Component {
         return (
             <div className='product_list'>
                 {this.props.products.map((product) => {
-                    return <ProductListItem key={product.id} id={product.id} name={product.name} selected={product.selected} selectOrUnselect={this.props.selectOrUnselectProduct} />
+                    return <ProductListItem key={product.id} id={product.id} name={product.name} category_id={product.category_id} selected={product.selected} selectOrUnselect={this.props.selectOrUnselectProduct} />
                 })}
             </div>
         )

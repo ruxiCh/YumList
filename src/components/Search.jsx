@@ -6,7 +6,6 @@ import CategoryList from "./CategoryList"
 
 class Search extends React.Component {
     render() {
-        console.log(this.props.categories)
         return(
             <div>
                 <header>

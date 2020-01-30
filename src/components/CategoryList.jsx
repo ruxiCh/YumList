@@ -7,7 +7,7 @@ class CategoryList extends React.Component {
         return(
             <div className="category_list">
                 {this.props.categories.map((category) => {
-                    return <CategoryListItem key={category.id} name={category.name} />
+                    return <CategoryListItem key={category.id} id={category.id} name={category.name} />
                 })}
             </div>
         )

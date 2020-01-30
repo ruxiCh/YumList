@@ -12,7 +12,8 @@ class Main extends React.Component {
         this.state = {
             activePage: this.props.pages[0],
             products: [],
-            categories: []
+            categories: [],
+            noFilterSelected: true
         }
         this.selectOrUnselectProduct = (product) => {
             let selectedValue = true
