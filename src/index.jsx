@@ -13,7 +13,7 @@ class Main extends React.Component {
             activePage: this.props.pages[0],
             products: [],
             categories: [],
-            noFilterSelected: true
+            selectedCategories: []
         }
         this.selectOrUnselectProduct = (product) => {
             let selectedValue = true
@@ -24,6 +24,19 @@ class Main extends React.Component {
             let productFromState = products.filter((item) =>  item.id === product.props.id)[0]
             productFromState.selected = selectedValue
             this.setState({products: products})
+        }
+        this.filterProducts = (categoryListItem) => {
+            let selectedCategories = this.state.selectedCategories
+            let category = categoryListItem.props.id
+            for (let i = 0; i < selectedCategories.length; i++) {
+                if (category === selectedCategories[i]) {
+                    selectedCategories = selectedCategories.splice(i, 1)
+                    this.setState({selectedCategories: selectedCategories})
+                    return
+                }
+            }
+            selectedCategories.push(category)
+            this.setState({selectedCategories: selectedCategories})
         }
         this.getProducts = () => {
             return new Promise((resolves, rejects) => {
@@ -78,7 +91,11 @@ class Main extends React.Component {
     render() {
         return (
             <div>
-                <this.state.activePage.component products={this.state.products} categories={this.state.categories} selectOrUnselectProduct={this.selectOrUnselectProduct} goToPage={this.goToPage} />
+                <this.state.activePage.component products={this.state.products}
+                                                 categories={this.state.categories}
+                                                 selectOrUnselectProduct={this.selectOrUnselectProduct}
+                                                 filterProducts={this.filterProducts}
+                                                 goToPage={this.goToPage} />
             </div>
         )
     }

@@ -13,7 +13,7 @@ class Search extends React.Component {
                     <GoToButton destination="List" goToPage={this.props.goToPage} />
                 </header>
                 <div className="category_list_container">
-                    <CategoryList categories={this.props.categories} />
+                    <CategoryList categories={this.props.categories} filterProducts={this.props.filterProducts} />
                 </div>
                 <div className="product_list_container">
                     <ProductList type="search" products={this.props.products} selectOrUnselectProduct={this.props.selectOrUnselectProduct} />
