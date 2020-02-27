@@ -7,7 +7,7 @@ class CategoryList extends React.Component {
         return(
             <div className="category_list">
                 {this.props.categories.map((category) => {
-                    return <CategoryListItem key={category.id} id={category.id} name={category.name} filterProducts={this.props.filterProducts} />
+                    return <CategoryListItem key={category.id} id={category.id} name={category.name} selectOrUnselectCategory={this.props.selectOrUnselectCategory} />
                 })}
             </div>
         )

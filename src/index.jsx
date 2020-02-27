@@ -25,14 +25,16 @@ class Main extends React.Component {
             productFromState.selected = selectedValue
             this.setState({products: products})
         }
-        this.filterProducts = (categoryListItem) => {
+        this.selectOrUnselectCategory = (categoryListItem) => {
             let selectedCategories = this.state.selectedCategories
             let category = categoryListItem.props.id
-            for (let i = 0; i < selectedCategories.length; i++) {
-                if (category === selectedCategories[i]) {
-                    selectedCategories = selectedCategories.splice(i, 1)
-                    this.setState({selectedCategories: selectedCategories})
-                    return
+            if(selectedCategories.length !== 0) {
+                for (let i = 0; i < selectedCategories.length; i++) {
+                    if (category === selectedCategories[i]) {
+                        selectedCategories.splice(i, 1)
+                        this.setState({selectedCategories: selectedCategories})
+                        return
+                    }
                 }
             }
             selectedCategories.push(category)
@@ -93,8 +95,9 @@ class Main extends React.Component {
             <div>
                 <this.state.activePage.component products={this.state.products}
                                                  categories={this.state.categories}
+                                                 selectedCategories={this.state.selectedCategories}
                                                  selectOrUnselectProduct={this.selectOrUnselectProduct}
-                                                 filterProducts={this.filterProducts}
+                                                 selectOrUnselectCategory={this.selectOrUnselectCategory}
                                                  goToPage={this.goToPage} />
             </div>
         )
