@@ -52,9 +52,9 @@ class Main extends React.Component {
                 request.send()
             })
         }
-        this.initSelectedProp = (products) => {
-            return products.map((product) => {
-                return Object.assign({selected: false}, product)
+        this.initSelectedProp = (elements) => {
+            return elements.map((element) => {
+                return Object.assign({selected: false}, element)
             })
         }
         this.getCategories = () => {
@@ -77,8 +77,8 @@ class Main extends React.Component {
 
     componentDidMount() {
         this.getProducts().then(
-            (productsWithoutSelectedProp) => {
-                var products = this.initSelectedProp(productsWithoutSelectedProp)
+            (products) => {
+                products = this.initSelectedProp(products)
                 this.setState({products: products})
             },
             () => { new Error("Could not get products!")}
