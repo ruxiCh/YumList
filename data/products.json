@@ -1,29 +1,29 @@
 {
-	"products": [
-		{	
-			"id" : 1, 
-			"name": "sweet potatoes",
-            "category_id": 2
-		},
-		{
-			"id" : 2, 
-			"name": "rice",
-            "category_id": 4
-		},
-		{
-			"id" : 3, 
-			"name": "chocolate",
-            "category_id": 5
-		},
-		{
-			"id" : 4, 
-			"name": "black beans",
-            "category_id": 3
-		},
-		{
-			"id" : 5, 
-			"name": "strawberries",
-            "category_id": 1
-		}
-	]
+  "products": [
+    {
+      "id": 1,
+      "name": "sweet potatoes",
+      "category_id": 2
+    },
+    {
+      "id": 2,
+      "name": "rice",
+      "category_id": 4
+    },
+    {
+      "id": 3,
+      "name": "chocolate",
+      "category_id": 5
+    },
+    {
+      "id": 4,
+      "name": "black beans",
+      "category_id": 3
+    },
+    {
+      "id": 5,
+      "name": "strawberries",
+      "category_id": 1
+    }
+  ]
 }

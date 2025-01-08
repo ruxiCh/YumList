@@ -1,66 +1,66 @@
 .product_list_container {
-	padding-top: 40px;
+  padding-top: 40px;
 }
 
 .product_list {
-	width: 80%;
-	margin: 0 auto;
-	display: flex;
-	flex-direction: row;
-	justify-content: left;
-	flex-wrap: wrap;
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  flex-wrap: wrap;
 }
 
 .product_list_item {
-	width: 14.5vw;
-	height: 14.5vw;
-	margin: 0 1% 1% 0;
-	position: relative;
-	border: 3px solid transparent;
-	position: relative;
-	&:nth-child(5n) {
-		margin-right: 0;
-	}
-	img {
-		width: 100%;
-		position: relative;
-		top: 50%;
-		transform: translateY(-50%);
-	}
-	.overlay {
-		opacity: 0;
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		left: 0;
-		background-color: fade(@green, 60%);
-		transition: opacity 0.5s;
-		&:hover {
-			opacity: 1;
-			cursor: pointer;
-		}
-	}
-	.product_name {
-		color: white;
-		text-align: center;
-		.font-s26();
-		text-transform: capitalize;
-		font-family: "Roboto", sans-serif;
-		padding-top: 30%;
-	}
-	.fa-check-circle {
-		color: @green;
-		.font-s26();
-		position: absolute;
-		top: 10px;
-		left: 10px;
-		opacity: 0;
-	}
-	&.selected {
-		border-color: @green;
-		.fa-check-circle {
-			opacity: 1;
-		}
-	}
+  width: 14.5vw;
+  height: 14.5vw;
+  margin: 0 1% 1% 0;
+  position: relative;
+  border: 3px solid transparent;
+  position: relative;
+  &:nth-child(5n) {
+    margin-right: 0;
+  }
+  img {
+    width: 100%;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .overlay {
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: fade(@green, 60%);
+    transition: opacity 0.5s;
+    &:hover {
+      opacity: 1;
+      cursor: pointer;
+    }
+  }
+  .product_name {
+    color: white;
+    text-align: center;
+    .font-s26();
+    text-transform: capitalize;
+    font-family: "Roboto", sans-serif;
+    padding-top: 30%;
+  }
+  .fa-check-circle {
+    color: @green;
+    .font-s26();
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    opacity: 0;
+  }
+  &.selected {
+    border-color: @green;
+    .fa-check-circle {
+      opacity: 1;
+    }
+  }
 }
