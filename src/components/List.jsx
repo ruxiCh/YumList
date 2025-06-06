@@ -19,7 +19,7 @@ class List extends React.Component {
           <ProductList
             type="list"
             products={this.filterProducts(this.props.products)}
-            selectOrUnselectProduct={this.props.selectOrUnselectProduct}
+            toggleProduct={this.props.toggleProduct}
           />
         </div>
       </div>

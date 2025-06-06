@@ -1,5 +1,4 @@
-{
-  "product_categories": [
+ [
     {
       "id": 1,
       "name": "fruits"
@@ -21,4 +20,3 @@
       "name": "sweets"
     }
   ]
-}

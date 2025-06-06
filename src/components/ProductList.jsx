@@ -14,7 +14,7 @@ class ProductList extends React.Component {
               name={product.name}
               category_id={product.category_id}
               selected={product.selected}
-              selectOrUnselect={this.props.selectOrUnselectProduct}
+              toggle={this.props.toggleProduct}
             />
           );
         })}

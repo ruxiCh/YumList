@@ -13,7 +13,7 @@ class CategoryListItem extends React.Component {
     return (
       <div
         className={`category_list_item ${this.isSelected() ? "selected" : ""}`}
-        onClick={() => this.props.selectOrUnselectCategory(this)}
+        onClick={() => this.props.toggleCategory(this.props.id)}
       >
         {this.props.name}
       </div>

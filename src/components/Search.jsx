@@ -32,14 +32,14 @@ class Search extends React.Component {
           <CategoryList
             categories={this.props.categories}
             selectedCategories={this.props.selectedCategories}
-            selectOrUnselectCategory={this.props.selectOrUnselectCategory}
+            toggleCategory={this.props.toggleCategory}
           />
         </div>
         <div className="product_list_container">
           <ProductList
             type="search"
             products={this.filterProducts(this.props.products)}
-            selectOrUnselectProduct={this.props.selectOrUnselectProduct}
+            toggleProduct={this.props.toggleProduct}
           />
         </div>
       </div>

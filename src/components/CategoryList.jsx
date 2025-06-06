@@ -13,7 +13,7 @@ class CategoryList extends React.Component {
               id={category.id}
               name={category.name}
               selectedCategories={this.props.selectedCategories}
-              selectOrUnselectCategory={this.props.selectOrUnselectCategory}
+              toggleCategory={this.props.toggleCategory}
             />
           );
         })}

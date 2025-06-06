@@ -6,7 +6,7 @@ class ProductListItem extends React.Component {
     return (
       <div
         className={`product_list_item ${this.props.selected ? "selected" : ""}`}
-        onClick={() => this.props.selectOrUnselect(this)}
+        onClick={() => this.props.toggle(this)}
       >
         <img src={imageSrc} />
         <div className="overlay">
