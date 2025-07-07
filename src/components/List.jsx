@@ -3,28 +3,26 @@ import React from "react";
 import GoToButton from "./GoToButton";
 import ProductList from "./ProductList";
 
-class List extends React.Component {
-  filterProducts(products) {
-    let filteredProducts = products.filter((item) => item.selected === true);
-    return filteredProducts;
+function List({products, goToPage, toggleProduct}) {
+  function filterProducts() {
+    return products.filter((item) => item.selected === true);
   }
-  render() {
-    return (
-      <div>
+
+  return (
+    <div>
         <header>
           <div className="logo"></div>
-          <GoToButton destination="Search" goToPage={this.props.goToPage} />
+          <GoToButton destination="Search" goToPage={goToPage} />
         </header>
         <div className="product_list_container">
           <ProductList
             type="list"
-            products={this.filterProducts(this.props.products)}
-            toggleProduct={this.props.toggleProduct}
+            products={filterProducts()}
+            toggleProduct={toggleProduct}
           />
         </div>
       </div>
-    );
-  }
+  )
 }
 
 export default List;

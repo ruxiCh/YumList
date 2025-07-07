@@ -1,24 +1,18 @@
 import React from "react";
 
-class CategoryListItem extends React.Component {
-  isSelected() {
-    for (let i = 0; i < this.props.selectedCategories.length; i++) {
-      if (this.props.selectedCategories[i] === this.props.id) {
-        return true;
-      }
-    }
-    return false;
+function CategoryListItem({ id, name, selectedCategories, toggleCategory}) {
+  function isSelected() {
+    return selectedCategories.some((category) => category === id);
   }
-  render() {
-    return (
-      <div
-        className={`category_list_item ${this.isSelected() ? "selected" : ""}`}
-        onClick={() => this.props.toggleCategory(this.props.id)}
-      >
-        {this.props.name}
-      </div>
-    );
-  }
+
+  return (
+    <div
+      className={`category_list_item ${isSelected() ? "selected" : ""}`}
+      onClick={() => toggleCategory(id)}
+    >
+      {name}
+    </div>
+  );
 }
 
 export default CategoryListItem;

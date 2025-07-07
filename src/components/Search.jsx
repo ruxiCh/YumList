@@ -4,15 +4,15 @@ import GoToButton from "./GoToButton";
 import ProductList from "./ProductList";
 import CategoryList from "./CategoryList";
 
-class Search extends React.Component {
-  filterProducts(products) {
-    if (this.props.selectedCategories.length === 0) {
+function Search({products, categories, selectedCategories, toggleProduct, toggleCategory, goToPage}) {
+  function filterProducts() {
+    if (selectedCategories.length === 0) {
       return products;
     } else {
       let filteredProducts = products;
       filteredProducts = filteredProducts.filter((product) => {
-        for (let i = 0; i < this.props.selectedCategories.length; i++) {
-          if (product.category_id === this.props.selectedCategories[i]) {
+        for (let i = 0; i < selectedCategories.length; i++) {
+          if (product.category_id === selectedCategories[i]) {
             return true;
           }
         }
@@ -21,30 +21,29 @@ class Search extends React.Component {
       return filteredProducts;
     }
   }
-  render() {
-    return (
-      <div>
-        <header>
-          <div className="logo"></div>
-          <GoToButton destination="List" goToPage={this.props.goToPage} />
-        </header>
-        <div className="category_list_container">
-          <CategoryList
-            categories={this.props.categories}
-            selectedCategories={this.props.selectedCategories}
-            toggleCategory={this.props.toggleCategory}
-          />
-        </div>
-        <div className="product_list_container">
-          <ProductList
-            type="search"
-            products={this.filterProducts(this.props.products)}
-            toggleProduct={this.props.toggleProduct}
-          />
-        </div>
+
+  return (
+    <div>
+      <header>
+        <div className="logo"></div>
+        <GoToButton destination="List" goToPage={goToPage} />
+      </header>
+      <div className="category_list_container">
+        <CategoryList
+          categories={categories}
+          selectedCategories={selectedCategories}
+          toggleCategory={toggleCategory}
+        />
       </div>
-    );
-  }
+      <div className="product_list_container">
+        <ProductList
+          type="search"
+          products={filterProducts()}
+          toggleProduct={toggleProduct}
+        />
+      </div>
+    </div>
+  );
 }
 
 export default Search;
